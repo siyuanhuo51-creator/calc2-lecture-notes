@@ -897,4 +897,33 @@ Now that we have defined tangent vectors to surfaces, we can define normal vecto
 \end{proof}
 
 \chapter{FTC for twisted curves in \mathbb{R}^n}
+\section{Integral of a function along a curve}
+The integral of a function along a curve $C \in \mathbb{R}^m$ is defined as
+
+\begin{equation}
+    \int_C fds = \lim_{N \to \infty} \sum_{i=0}^N f(\mathbf{r}_i)\delta s_i.
+\end{equation}
+\begin{theorem}
+    Let $\mathbf{r}: [a, b] \to C \subset \mathbb{R}^m$ is a parametrisation of a curve $C$. Then the integral of $f: \mathbb{R}^m \to \mathbb{R}$ over $C$ is
+\begin{equation}
+    \int_C f ds = \int_{a}^{b} f(\mathbf{r(t)})||\mathbf{r}'(t)||dt.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+    We need to use (3.1). First, we split up the interval $[a, b]$ into small pieces with width $\delta t$. We can approximate this small piece of curve into a straight line from $\mathbf{r}(t_i)$ to $\mathbf{r}(t_i + \delta t)$ and the length of this, $\delta s_i$, can be approximated as $$||\mathbf{r}(t_i+\delta t) - \mathbf{r}(t_i)||.$$
+
+    Also, $\mathbf{r}(t_i + \delta t) - \mathbf{r}(t_i) \approx \mathbf{r}'(t_i) \delta t$, so by taking the norm of everything, we have $\delta s_i \approx ||\mathbf{r}'(t_i)||\delta t.$
+
+    Using (3.1), we have
+\begin{equation}
+    \begin{split}
+        \int_C f ds &= \lim_{N \to \infty} \sum_{i = 0}^N f(\mathbf{r}(t_i)) ||\mathbf{r}'(t_i)|| \delta t \\ &=\int_{a}^{b} f(\mathbf{r}(t))||\mathbf{r}'(t)||dt
+    \end{split}
+\end{equation}
+\end{proof}
+
+But how do we interpret this in a geometrical sense?
+
+The line integral is the surface area of the strip between the curve $C$ and the graph of $f$ over $C$. Think of it as $f$ being the density of a wire shaped like $C$.
 \end{document}
