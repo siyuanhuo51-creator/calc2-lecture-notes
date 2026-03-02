@@ -925,8 +925,28 @@ The integral of a function along a curve $C \in \mathbb{R}^m$ is defined as
 \end{equation}
 \end{proof}
 
-But how do we interpret this in a geometrical sense?
+Let's look at an example of this.
 
-The line integral is the surface area of the strip between the curve $C$ and the graph of $f$ over $C$. Think of it as $f$ being the density of a wire shaped like $C$.
+\begin{example}
+Let's evaluate the integral $\int_C f ds$ where $f(x,y) = x + y$ parametrised by the curve $\mathbf{r}(t) = (2cos(t), 2sin(t))$, $0 \leq t \leq \frac{\pi}{2}$
+First, we take the derivative of $\mathbf{r}$, which gives $\mathbf{r}'(t) = (-2sin(t), 2cos(t))$ and so
+\begin{equation}
+	\begin{split}
+		||\mathbf{r}'(t)|| &= \sqrt{-2sin(t))^2 + (2cos(t))^2} \\&= \sqrt{4sin^2(t) + 4cos^2(t)} \\&= \sqrt{4} = 2
+	\end{split}
+\end{equation}
+This is because the norm must be $\geq 0$ so it can't be $-2$
+Also, $f(\mathbf{r}(t)) = 2cos(t) + 2sin(t)$
+So we now have
+\begin{equation}
+	\begin{split}
+		\int_C f ds &= \int_{0}^{\frac{\pi}{2}} (2cos(t) + 2sin(t))2dt \\&= (4sin(t) - 4cos(t))|_{0}^{\frac{\pi}{2}} \\&= 4*1 - 4*0 - (4*0 - 4*1) = 8
+	\end{split}
+\end{equation}
+\end{example}
+
+The line integral is the surface area of the strip between the curve $C$ and the graph of $f$ over $C$. Think of it as $f$ being the density of a wire shaped like $C$, where every tiny piece is the "weight" of that piece. Therefore, we can use the function $f(x) = 1$ to help compute the length of the arc.
+
+\section{Arc Length}
 
 \end{document}
